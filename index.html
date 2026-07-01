@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomasthewriter | Professional Services & Custom Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --bg-grad: linear-gradient(135deg, #1e1b4b, #311005);
+            --card-bg: #1e1b4b;
+            --card-border: #3730a3;
+            --text-main: #faf5ff;
+            --text-muted: #c7d2fe;
+            --accent: #f97316;
+            --accent-hover: #ea580c;
+            --body-bg: #090514;
+            --font: 'Playfair Display', serif, sans-serif;
+            --card-radius: 0.75rem;
+            --card-shadow: none;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font);
+            background: var(--body-bg);
+            color: var(--text-muted);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent-hover);
+        }
+    
+        
+        .split-hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+        
+        @media (max-width: 992px) {
+            .split-hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-right {
+                display: none;
+            }
+        }
+        
+        .hero-left {
+            padding: 8rem 8% 5rem 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero-right {
+            background: var(--bg-grad);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-left: 1px solid var(--card-border);
+        }
+        
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03) 0%, transparent 40%);
+            background-size: 100% 100%;
+            opacity: 0.15;
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tag-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--card-border);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--card-radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            align-self: flex-start;
+        }
+        
+        .title-huge {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -1.5px;
+        }
+        
+        .btn-creative {
+            background: var(--accent);
+            color: #ffffff;
+            padding: 1.2rem 3rem;
+            font-weight: 600;
+            border-radius: var(--card-radius);
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-creative:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            color: #ffffff;
+        }
+        
+        section {
+            padding: 8rem 8%;
+        }
+        
+        .sec-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        .feature-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .num-circle {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            border-top: 4px solid var(--accent);
+            border-radius: var(--card-radius);
+            padding: 3rem 2.5rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--card-radius);
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+        
+        @media (max-width: 900px) {
+            .contact-box {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+        }
+        
+        input, textarea {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--card-border);
+            padding: 1.2rem;
+            color: var(--text-main);
+            border-radius: var(--card-radius);
+            font-family: var(--font);
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        
+        footer {
+            padding: 4rem 8%;
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="split-hero">
+        <div class="hero-left">
+            <div class="tag-badge">Thomasthewriter</div>
+            <h1 class="title-huge">Innovative solutions for your growing business</h1>
+            <p class="hero-desc" style="margin-bottom: 3rem;">Welcome to Thomasthewriter. We deliver exceptional services, custom-built strategies, and high-value results designed to help you succeed in today's dynamic market.</p>
+            <div>
+                <a href="#contact" class="btn-creative">Work With Us</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <span style="font-size: 3rem; font-weight: 700; color: #ffffff; opacity: 0.1; letter-spacing: -2px;">Thomasthewriter</span>
+        </div>
+    </div>
+
+    <section id="features" style="background: rgba(255,255,255,0.01);">
+        <h2 class="sec-title">Our Values</h2>
+        <div class="features-list">
+            <div class="feature-row">
+                <div class="num-circle">01</div>
+                <div>
+                    <h3 class="feature-title">Tailored Strategy</h3>
+                    <p style="max-width: 800px;">Customized approaches designed to align perfectly with your unique goals and values.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="num-circle">02</div>
+                <div>
+                    <h3 class="feature-title">Industry Expertise</h3>
+                    <p style="max-width: 800px;">Our team of seasoned professionals brings decades of collective experience to the table.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="num-circle">03</div>
+                <div>
+                    <h3 class="feature-title">Proven Results</h3>
+                    <p style="max-width: 800px;">We focus on tangible outcomes, delivering measurable growth and operational efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div style="max-width: 900px;">
+            <h2 class="sec-title">About the Brand</h2>
+            <p style="font-size: 1.3rem; color: var(--text-main); line-height: 1.7; margin-bottom: 2rem;">At Thomasthewriter, we believe in integrity, innovation, and long-term partnership. Our mission is to empower our clients with the tools and insights they need to navigate complex challenges and seize new opportunities. Whether you are looking to optimize your current setup or launch a brand new venture, we are here to support you every step of the way.</p>
+        </div>
+    </section>
+
+    <section id="services" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+        <h2 class="sec-title">Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3 class="feature-title">Consulting & Strategy</h3>
+                <p>Strategic analysis and pathfinding to accelerate your progress.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="feature-title">Execution & Delivery</h3>
+                <p>Turning plans into action with robust, professional project management.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="feature-title">Support & Optimization</h3>
+                <p>Ongoing maintenance and optimization to ensure sustained success.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <div>
+                <h2 class="sec-title" style="margin-bottom: 1.5rem;">Let's Connect</h2>
+                <p style="margin-bottom: 3rem;">Ready to partner with us or have a question? Complete the form, and our representative will reach out shortly.</p>
+                <div style="font-size: 0.95rem;">
+                    <p style="font-weight: 600; color: var(--text-main);">Direct Email</p>
+                    <p style="margin-bottom: 1.5rem;"><a href="mailto:hello@thomasthewriter.com">hello@thomasthewriter.com</a></p>
+                    <p style="font-weight: 600; color: var(--text-main);">Office Line</p>
+                    <p>+1 (555) 019-2834</p>
+                </div>
+            </div>
+            <div>
+                <form action="#" onsubmit="alert('Thank you! Your message has been sent.'); return false;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea placeholder="Tell us about your needs..." rows="5" required></textarea>
+                    <button type="submit" class="btn-creative" style="border:none; cursor:pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Thomasthewriter. All rights reserved.</p>
+        <div style="display: flex; gap: 2rem;">
+            <a href="#">LinkedIn</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
